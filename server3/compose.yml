@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  backend:
+    image: 'spring-docker-liqui-image'
+    container_name: java-backend-liqui
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=qwerty
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - 8001:8000
+
+  db:
+    image: 'postgres'
+    container_name: pg-server
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+    ports: 
+      - 2345:5432
