@@ -1,0 +1,1 @@
+ALTER TABLE t_items ALTER COLUMN price TYPE numeric(10,2);

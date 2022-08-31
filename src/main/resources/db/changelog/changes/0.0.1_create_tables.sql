@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS t_items;
+
+CREATE TABLE t_items(
+    id SERIAL PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    price INT DEFAULT 0,
+    amount INT DEFAULT 0
+);
